@@ -1,302 +1,0 @@
-travis_fold:start:worker_info[0K[33;1mWorker information[0m
-hostname: i-04c8ea0-precise-production-2-worker-org-docker.travisci.net:7b8a2b07-f167-437e-bbb7-f54037f3448d
-version: v2.5.0 https://github.com/travis-ci/worker/tree/da3a43228dffc0fcca5a46569ca786b22991979f
-instance: 66ce8d0:travis:ruby
-startup: 737.559438ms
-travis_fold:end:worker_info[0Ktravis_fold:start:system_info[0K[33;1mBuild system information[0m
-Build language: ruby
-Build group: stable
-Build dist: precise
-Build id: 249146203
-Job id: 249146204
-travis-build version: 75a27e5e4
-[34m[1mBuild image provisioning date and time[0m
-Thu Feb  5 15:09:33 UTC 2015
-[34m[1mOperating System Details[0m
-Distributor ID:	Ubuntu
-Description:	Ubuntu 12.04.5 LTS
-Release:	12.04
-Codename:	precise
-[34m[1mLinux Version[0m
-3.13.0-29-generic
-[34m[1mCookbooks Version[0m
-a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
-[34m[1mGCC version[0m
-gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
-Copyright (C) 2011 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-[34m[1mLLVM version[0m
-clang version 3.4 (tags/RELEASE_34/final)
-Target: x86_64-unknown-linux-gnu
-Thread model: posix
-[34m[1mPre-installed Ruby versions[0m
-ruby-1.9.3-p551
-[34m[1mPre-installed Node.js versions[0m
-v0.10.36
-[34m[1mPre-installed Go versions[0m
-1.4.1
-[34m[1mRedis version[0m
-redis-server 2.8.19
-[34m[1mriak version[0m
-2.0.2
-[34m[1mMongoDB version[0m
-MongoDB 2.4.12
-[34m[1mCouchDB version[0m
-couchdb 1.6.1
-[34m[1mNeo4j version[0m
-1.9.4
-[34m[1mRabbitMQ Version[0m
-3.4.3
-[34m[1mElasticSearch version[0m
-1.4.0
-[34m[1mInstalled Sphinx versions[0m
-2.0.10
-2.1.9
-2.2.6
-[34m[1mDefault Sphinx version[0m
-2.2.6
-[34m[1mInstalled Firefox version[0m
-firefox 31.0esr
-[34m[1mPhantomJS version[0m
-1.9.8
-[34m[1mant -version[0m
-Apache Ant(TM) version 1.8.2 compiled on December 3 2011
-[34m[1mmvn -version[0m
-Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
-Maven home: /usr/local/maven
-Java version: 1.7.0_76, vendor: Oracle Corporation
-Java home: /usr/lib/jvm/java-7-oracle/jre
-Default locale: en_US, platform encoding: ANSI_X3.4-1968
-OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
-travis_fold:end:system_info[0K
-travis_fold:start:fix.CVE-2015-7547[0K$ export DEBIAN_FRONTEND=noninteractive
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following extra packages will be installed:
-  libc-bin libc-dev-bin libc6-dev
-Suggested packages:
-  glibc-doc
-The following packages will be upgraded:
-  libc-bin libc-dev-bin libc6 libc6-dev
-4 upgraded, 0 newly installed, 0 to remove and 277 not upgraded.
-Need to get 8,856 kB of archives.
-After this operation, 13.3 kB of additional disk space will be used.
-Get:1 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc6-dev amd64 2.15-0ubuntu10.18 [2,948 kB]
-Get:2 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc-dev-bin amd64 2.15-0ubuntu10.18 [84.5 kB]
-Get:3 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc-bin amd64 2.15-0ubuntu10.18 [1,178 kB]
-Get:4 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc6 amd64 2.15-0ubuntu10.18 [4,646 kB]
-Fetched 8,856 kB in 0s (22.0 MB/s)
-Preconfiguring packages ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 71420 files and directories currently installed.)
-Preparing to replace libc6-dev 2.15-0ubuntu10.10 (using .../libc6-dev_2.15-0ubuntu10.18_amd64.deb) ...
-Unpacking replacement libc6-dev ...
-Preparing to replace libc-dev-bin 2.15-0ubuntu10.10 (using .../libc-dev-bin_2.15-0ubuntu10.18_amd64.deb) ...
-Unpacking replacement libc-dev-bin ...
-Preparing to replace libc-bin 2.15-0ubuntu10.10 (using .../libc-bin_2.15-0ubuntu10.18_amd64.deb) ...
-Unpacking replacement libc-bin ...
-Processing triggers for man-db ...
-Setting up libc-bin (2.15-0ubuntu10.18) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 71419 files and directories currently installed.)
-Preparing to replace libc6 2.15-0ubuntu10.10 (using .../libc6_2.15-0ubuntu10.18_amd64.deb) ...
-Unpacking replacement libc6 ...
-Setting up libc6 (2.15-0ubuntu10.18) ...
-Setting up libc-dev-bin (2.15-0ubuntu10.18) ...
-Setting up libc6-dev (2.15-0ubuntu10.18) ...
-Processing triggers for libc-bin ...
-ldconfig deferred processing now taking place
-travis_fold:end:fix.CVE-2015-7547[0Ktravis_fold:start:update_libssl1.0.0[0K$ sudo apt-get install libssl1.0.0
-Reading package lists... 0%Reading package lists... 0%Reading package lists... 1%Reading package lists... 10%Reading package lists... 10%Reading package lists... 11%Reading package lists... 11%Reading package lists... 30%Reading package lists... 46%Reading package lists... 46%Reading package lists... 47%Reading package lists... 47%Reading package lists... 54%Reading package lists... 58%Reading package lists... 58%Reading package lists... 58%Reading package lists... 58%Reading package lists... 86%Reading package lists... 94%Reading package lists... 94%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 95%Reading package lists... 96%Reading package lists... 96%Reading package lists... 96%Reading package lists... 96%Reading package lists... 97%Reading package lists... 97%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... Done
-Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... 82%Building dependency tree       
-Reading state information... 0%Reading state information... 0%Reading state information... Done
-The following extra packages will be installed:
-  libssl-dev
-The following packages will be upgraded:
-  libssl-dev libssl1.0.0
-2 upgraded, 0 newly installed, 0 to remove and 275 not upgraded.
-Need to get 2,634 kB of archives.
-After this operation, 29.7 kB of additional disk space will be used.
-0% [Working]            Get:1 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libssl-dev amd64 1.0.1-4ubuntu5.39 [1,580 kB]
-            1% [1 libssl-dev 14.1 kB/1,580 kB 1%]                                     60% [Working]             Get:2 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libssl1.0.0 amd64 1.0.1-4ubuntu5.39 [1,054 kB]
-             60% [2 libssl1.0.0 0 B/1,054 kB 0%]                                   100% [Working]              Fetched 2,634 kB in 0s (14.7 MB/s)
-Preconfiguring packages ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 71419 files and directories currently installed.)
-Preparing to replace libssl-dev 1.0.1-4ubuntu5.21 (using .../libssl-dev_1.0.1-4ubuntu5.39_amd64.deb) ...
-Unpacking replacement libssl-dev ...
-Preparing to replace libssl1.0.0 1.0.1-4ubuntu5.21 (using .../libssl1.0.0_1.0.1-4ubuntu5.39_amd64.deb) ...
-Unpacking replacement libssl1.0.0 ...
-Setting up libssl1.0.0 (1.0.1-4ubuntu5.39) ...
-Setting up libssl-dev (1.0.1-4ubuntu5.39) ...
-Processing triggers for libc-bin ...
-ldconfig deferred processing now taking place
-travis_fold:end:update_libssl1.0.0[0Ktravis_fold:start:git.checkout[0Ktravis_time:start:0b0504d0[0K$ git clone --depth=50 https://github.com/coinbase/master_lock.git coinbase/master_lock
-Cloning into 'coinbase/master_lock'...
-remote: Counting objects: 103, done.[K
-remote: Total 103 (delta 0), reused 0 (delta 0), pack-reused 103[K
-Receiving objects:   0% (1/103)   Receiving objects:   1% (2/103)   Receiving objects:   2% (3/103)   Receiving objects:   3% (4/103)   Receiving objects:   4% (5/103)   Receiving objects:   5% (6/103)   Receiving objects:   6% (7/103)   Receiving objects:   7% (8/103)   Receiving objects:   8% (9/103)   Receiving objects:   9% (10/103)   Receiving objects:  10% (11/103)   Receiving objects:  11% (12/103)   Receiving objects:  12% (13/103)   Receiving objects:  13% (14/103)   Receiving objects:  14% (15/103)   Receiving objects:  15% (16/103)   Receiving objects:  16% (17/103)   Receiving objects:  17% (18/103)   Receiving objects:  18% (19/103)   Receiving objects:  19% (20/103)   Receiving objects:  20% (21/103)   Receiving objects:  21% (22/103)   Receiving objects:  22% (23/103)   Receiving objects:  23% (24/103)   Receiving objects:  24% (25/103)   Receiving objects:  25% (26/103)   Receiving objects:  26% (27/103)   Receiving objects:  27% (28/103)   Receiving objects:  28% (29/103)   Receiving objects:  29% (30/103)   Receiving objects:  30% (31/103)   Receiving objects:  31% (32/103)   Receiving objects:  32% (33/103)   Receiving objects:  33% (34/103)   Receiving objects:  34% (36/103)   Receiving objects:  35% (37/103)   Receiving objects:  36% (38/103)   Receiving objects:  37% (39/103)   Receiving objects:  38% (40/103)   Receiving objects:  39% (41/103)   Receiving objects:  40% (42/103)   Receiving objects:  41% (43/103)   Receiving objects:  42% (44/103)   Receiving objects:  43% (45/103)   Receiving objects:  44% (46/103)   Receiving objects:  45% (47/103)   Receiving objects:  46% (48/103)   Receiving objects:  47% (49/103)   Receiving objects:  48% (50/103)   Receiving objects:  49% (51/103)   Receiving objects:  50% (52/103)   Receiving objects:  51% (53/103)   Receiving objects:  52% (54/103)   Receiving objects:  53% (55/103)   Receiving objects:  54% (56/103)   Receiving objects:  55% (57/103)   Receiving objects:  56% (58/103)   Receiving objects:  57% (59/103)   Receiving objects:  58% (60/103)   Receiving objects:  59% (61/103)   Receiving objects:  60% (62/103)   Receiving objects:  61% (63/103)   Receiving objects:  62% (64/103)   Receiving objects:  63% (65/103)   Receiving objects:  64% (66/103)   Receiving objects:  65% (67/103)   Receiving objects:  66% (68/103)   Receiving objects:  67% (70/103)   Receiving objects:  68% (71/103)   Receiving objects:  69% (72/103)   Receiving objects:  70% (73/103)   Receiving objects:  71% (74/103)   Receiving objects:  72% (75/103)   Receiving objects:  73% (76/103)   Receiving objects:  74% (77/103)   Receiving objects:  75% (78/103)   Receiving objects:  76% (79/103)   Receiving objects:  77% (80/103)   Receiving objects:  78% (81/103)   Receiving objects:  79% (82/103)   Receiving objects:  80% (83/103)   Receiving objects:  81% (84/103)   Receiving objects:  82% (85/103)   Receiving objects:  83% (86/103)   Receiving objects:  84% (87/103)   Receiving objects:  85% (88/103)   Receiving objects:  86% (89/103)   Receiving objects:  87% (90/103)   Receiving objects:  88% (91/103)   Receiving objects:  89% (92/103)   Receiving objects:  90% (93/103)   Receiving objects:  91% (94/103)   Receiving objects:  92% (95/103)   Receiving objects:  93% (96/103)   Receiving objects:  94% (97/103)   Receiving objects:  95% (98/103)   Receiving objects:  96% (99/103)   Receiving objects:  97% (100/103)   Receiving objects:  98% (101/103)   Receiving objects:  99% (102/103)   Receiving objects: 100% (103/103)   Receiving objects: 100% (103/103), 18.75 KiB | 0 bytes/s, done.
-Resolving deltas:   0% (0/38)   Resolving deltas:  13% (5/38)   Resolving deltas:  15% (6/38)   Resolving deltas:  18% (7/38)   Resolving deltas:  21% (8/38)   Resolving deltas:  26% (10/38)   Resolving deltas:  36% (14/38)   Resolving deltas:  39% (15/38)   Resolving deltas:  47% (18/38)   Resolving deltas:  50% (19/38)   Resolving deltas:  55% (21/38)   Resolving deltas:  60% (23/38)   Resolving deltas:  68% (26/38)   Resolving deltas:  71% (27/38)   Resolving deltas:  76% (29/38)   Resolving deltas:  81% (31/38)   Resolving deltas:  97% (37/38)   Resolving deltas: 100% (38/38)   Resolving deltas: 100% (38/38), done.
-Checking connectivity... done.
-
-travis_time:end:0b0504d0:start=1498928716192734295,finish=1498928716748751149,duration=556016854[0K$ cd coinbase/master_lock
-travis_time:start:00b78d92[0K$ git fetch origin +refs/pull/2/merge:
-remote: Counting objects: 8, done.[K
-remote: Compressing objects:  33% (1/3)   [Kremote: Compressing objects:  66% (2/3)   [Kremote: Compressing objects: 100% (3/3)   [Kremote: Compressing objects: 100% (3/3), done.[K
-remote: Total 8 (delta 5), reused 7 (delta 5), pack-reused 0[K
-Unpacking objects:  12% (1/8)   Unpacking objects:  25% (2/8)   Unpacking objects:  37% (3/8)   Unpacking objects:  50% (4/8)   Unpacking objects:  62% (5/8)   Unpacking objects:  75% (6/8)   Unpacking objects:  87% (7/8)   Unpacking objects: 100% (8/8)   Unpacking objects: 100% (8/8), done.
-From https://github.com/coinbase/master_lock
- * branch            refs/pull/2/merge -> FETCH_HEAD
-
-travis_time:end:00b78d92:start=1498928716764048403,finish=1498928717232074473,duration=468026070[0K$ git checkout -qf FETCH_HEAD
-travis_fold:end:git.checkout[0Ktravis_fold:start:services[0Ktravis_time:start:03f620ef[0K$ sudo service redis-server start
-redis-server start/running, process 1299
-
-travis_time:end:03f620ef:start=1498928717258218099,finish=1498928717370836525,duration=112618426[0Ktravis_fold:end:services[0Ktravis_fold:start:rvm[0Ktravis_time:start:00459467[0K$ rvm use 2.3.1 --install --binary --fuzzy
-[33mruby-2.3.1 is not installed - installing.[0m
-[32mSearching for binary rubies, this might take some time.[0m
-[32mFound remote file https://s3.amazonaws.com/travis-rubies/binaries/ubuntu/12.04/x86_64/ruby-2.3.1.tar.bz2[0m
-[32mChecking requirements for ubuntu.[0m
-[32mRequirements installation successful.[0m
-[32mruby-2.3.1 - #configure[0m
-[32mruby-2.3.1 - #download[0m
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 23.0M  100 23.0M    0     0  51.0M      0 --:--:-- --:--:-- --:--:-- 51.3M
-[33mNo checksum for downloaded archive, recording checksum in user configuration.[0m
-[32mruby-2.3.1 - #validate archive[0m
-[32mruby-2.3.1 - #extract[0m
-[32mruby-2.3.1 - #validate binary[0m
-[32mruby-2.3.1 - #setup[0m
-[32mruby-2.3.1 - #gemset created /home/travis/.rvm/gems/ruby-2.3.1@global[0m
-[32mruby-2.3.1 - #importing gemset /home/travis/.rvm/gemsets/global.gems[0m|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-.
-[32mruby-2.3.1 - #generating global wrappers[0m|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/.
-[32mruby-2.3.1 - #uninstalling gem rubygems-bundler-1.4.4[0m|/.
-[32mruby-2.3.1 - #gemset created /home/travis/.rvm/gems/ruby-2.3.1[0m
-[32mruby-2.3.1 - #importing gemset /home/travis/.rvm/gemsets/default.gems[0m|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.
-[32mruby-2.3.1 - #generating default wrappers[0m|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-.
-chown: changing ownership of `/home/travis/.rvm/user/installs': Operation not permitted
-[32mUsing /home/travis/.rvm/gems/ruby-2.3.1[0m
-
-travis_time:end:00459467:start=1498928732431984064,finish=1498928771552120649,duration=39120136585[0Ktravis_fold:end:rvm[0K$ export BUNDLE_GEMFILE=$PWD/Gemfile
-$ ruby --version
-ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-linux]
-$ rvm --version
-rvm 1.26.10 (latest-minor) by Wayne E. Seguin <wayneeseguin@gmail.com>, Michal Papis <mpapis@gmail.com> [https://rvm.io/]
-$ bundle --version
-Bundler version 1.15.1
-$ gem --version
-2.5.1
-travis_fold:start:before_install[0Ktravis_time:start:05bc5236[0K$ gem install bundler -v 1.13.1
-Fetching: bundler-1.13.1.gemFetching: bundler-1.13.1.gem (  1%)Fetching: bundler-1.13.1.gem (  2%)Fetching: bundler-1.13.1.gem (  3%)Fetching: bundler-1.13.1.gem (  4%)Fetching: bundler-1.13.1.gem (  5%)Fetching: bundler-1.13.1.gem (  6%)Fetching: bundler-1.13.1.gem (  7%)Fetching: bundler-1.13.1.gem (  8%)Fetching: bundler-1.13.1.gem (  9%)Fetching: bundler-1.13.1.gem ( 10%)Fetching: bundler-1.13.1.gem ( 11%)Fetching: bundler-1.13.1.gem ( 16%)Fetching: bundler-1.13.1.gem ( 22%)Fetching: bundler-1.13.1.gem ( 27%)Fetching: bundler-1.13.1.gem ( 32%)Fetching: bundler-1.13.1.gem ( 38%)Fetching: bundler-1.13.1.gem ( 43%)Fetching: bundler-1.13.1.gem ( 48%)Fetching: bundler-1.13.1.gem ( 54%)Fetching: bundler-1.13.1.gem ( 59%)Fetching: bundler-1.13.1.gem ( 65%)Fetching: bundler-1.13.1.gem ( 70%)Fetching: bundler-1.13.1.gem ( 75%)Fetching: bundler-1.13.1.gem ( 81%)Fetching: bundler-1.13.1.gem ( 86%)Fetching: bundler-1.13.1.gem ( 91%)Fetching: bundler-1.13.1.gem ( 97%)Fetching: bundler-1.13.1.gem (100%)Fetching: bundler-1.13.1.gem (100%)
-Successfully installed bundler-1.13.1
-1 gem installed
-
-travis_time:end:05bc5236:start=1498928772564184761,finish=1498928773270570963,duration=706386202[0Ktravis_fold:end:before_install[0Ktravis_fold:start:install.bundler[0Ktravis_time:start:002f3807[0K$ bundle install --jobs=3 --retry=3
-Fetching gem metadata from https://rubygems.org/........
-Fetching version metadata from https://rubygems.org/.
-Resolving dependencies...
-[32mFetching rake 10.5.0[0m
-[32mFetching redis 3.3.3[0m
-[32mInstalling redis 3.3.3[0m
-[32mInstalling rake 10.5.0[0m
-[32mFetching rspec-support 3.6.0[0m
-[32mInstalling rspec-support 3.6.0[0m
-[32mFetching diff-lcs 1.3[0m
-[32mFetching json 2.1.0[0m
-[32mInstalling diff-lcs 1.3[0m
-[32mInstalling json 2.1.0 with native extensions[0m
-[32mFetching docile 1.1.5[0m
-[32mInstalling docile 1.1.5[0m
-[32mFetching simplecov-html 0.10.1[0m
-[32mInstalling simplecov-html 0.10.1[0m
-[32mFetching tins 1.15.0[0m
-[32mInstalling tins 1.15.0[0m
-[32mFetching thor 0.19.4[0m
-[32mInstalling thor 0.19.4[0m
-Using bundler 1.15.1
-Using master_lock 0.9.1 from source at `.`
-[32mFetching rspec-core 3.6.0[0m
-[32mFetching rspec-expectations 3.6.0[0m
-[32mInstalling rspec-core 3.6.0[0m
-[32mInstalling rspec-expectations 3.6.0[0m
-[32mFetching rspec-mocks 3.6.0[0m
-[32mFetching term-ansicolor 1.6.0[0m
-[32mInstalling rspec-mocks 3.6.0[0m
-[32mFetching simplecov 0.14.1[0m
-[32mInstalling term-ansicolor 1.6.0[0m
-[32mFetching rspec 3.6.0[0m
-[32mInstalling simplecov 0.14.1[0m
-[32mInstalling rspec 3.6.0[0m
-[32mFetching coveralls 0.8.21[0m
-[32mInstalling coveralls 0.8.21[0m
-[32mBundle complete! 5 Gemfile dependencies, 18 gems now installed.[0m
-[32mUse `bundle info [gemname]` to see where a bundled gem is installed.[0m
-
-travis_time:end:002f3807:start=1498928773282390187,finish=1498928780864055061,duration=7581664874[0Ktravis_fold:end:install.bundler[0Ktravis_time:start:10d515f8[0K$ bundle exec rake
-/home/travis/.rvm/rubies/ruby-2.3.1/bin/ruby -I/home/travis/.rvm/gems/ruby-2.3.1/gems/rspec-core-3.6.0/lib:/home/travis/.rvm/gems/ruby-2.3.1/gems/rspec-support-3.6.0/lib /home/travis/.rvm/gems/ruby-2.3.1/gems/rspec-core-3.6.0/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb
-[32m[Coveralls] Set up the SimpleCov formatter.[0m
-[32m[Coveralls] Using SimpleCov's default settings.[0m
-
-Randomized with seed 25993
-
-MasterLock
-[32m  allows a lock to be acquired after it was released[0m
-[32m  extends held locks automatically[0m
-[32m  does not allow a lock to be acquired multiple times[0m
-  .synchronize
-[32m    raises an ArgumentError when ttl is less than extend_interval[0m
-[32m    returns the result of the block[0m
-[32m    raises an ArgumentError when ttl is less than extend_interval[0m
-    when the :if option is false
-[32m      returns the result of the block[0m
-[32m      does not obtain the lock[0m
-
-MasterLock::RedisLock
-  #extend
-[32m    resets the expiration time[0m
-[32m    returns true when lock is held by owner[0m
-[32m    returns false when lock is held by another owner[0m
-[32m    returns false when lock is not held[0m
-  #acquire
-[32m    returns true when lock can be acquired[0m
-[32m    returns false when lock can not be acquired[0m
-[32m    returns false if the same owner already has the lock[0m
-[32m    attempts to acquire the lock repeatedly until timeout[0m
-  #release
-[32m    returns false when lock is held by another owner[0m
-[32m    returns false when lock is not held[0m
-[32m    changes the lock to be unowned[0m
-[32m    returns true when lock is held by owner[0m
-
-MasterLock::Registry
-  #unregister
-[32m    marks the lock as released[0m
-  #register
-[32m    tracks the registered lock[0m
-[32m    returns the registered struct[0m
-  #extend_locks
-[32m    extends locks that have been held longer than the extend_interval[0m
-[32m    does not remove active locks[0m
-[32m    does not attempt to extend recently acquired locks[0m
-W, [2017-07-01T17:06:23.132446 #3688]  WARN -- MasterLock: {:lock_id=>"test", :message=>"Could not renew lease on lock."}
-[32m    removes the locks from the registered list after it has expired[0m
-[32m    removes the locks from the registered list after it has been released[0m
-I, [2017-07-01T17:06:23.139217 #3688]  INFO -- MasterLock: {:lock_id=>"test", :message=>"Releasing lock after owning thread terminated."}
-[32m    removes the locks from the registered list if the owning thread dies[0m
-
-Finished in 0.76336 seconds (files took 0.45442 seconds to load)
-[32m29 examples, 0 failures[0m
-
-Randomized with seed 25993
-
-[36m[Coveralls] Submitting to https://coveralls.io/api/v1[0m
-[36m[Coveralls] Job #30.1[0m
-[36m[Coveralls] [4mhttps://coveralls.io/jobs/27253743[0m[0m
-Coverage is at 99.57%.
-Coverage report sent to Coveralls.
-
-travis_time:end:10d515f8:start=1498928780892205289,finish=1498928784064151227,duration=3171945938[0K
-[32;1mThe command "bundle exec rake" exited with 0.[0m
-
-Done. Your build exited with 0.

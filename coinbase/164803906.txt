@@ -1,807 +1,0 @@
-Using worker: worker-linux-docker-19f5a4e1.prod.travis-ci.org:travis-linux-5
-
-travis_fold:start:system_info[0K[33;1mBuild system information[0m
-Build language: ruby
-Build group: stable
-Build dist: precise
-Build id: 164803905
-Job id: 164803906
-travis-build version: d0988f208
-[34m[1mBuild image provisioning date and time[0m
-Thu Feb  5 15:09:33 UTC 2015
-[34m[1mOperating System Details[0m
-Distributor ID:	Ubuntu
-Description:	Ubuntu 12.04.5 LTS
-Release:	12.04
-Codename:	precise
-[34m[1mLinux Version[0m
-3.13.0-29-generic
-[34m[1mCookbooks Version[0m
-a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
-[34m[1mGCC version[0m
-gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
-Copyright (C) 2011 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-
-[34m[1mLLVM version[0m
-clang version 3.4 (tags/RELEASE_34/final)
-Target: x86_64-unknown-linux-gnu
-Thread model: posix
-[34m[1mPre-installed Ruby versions[0m
-ruby-1.9.3-p551
-[34m[1mPre-installed Node.js versions[0m
-v0.10.36
-[34m[1mPre-installed Go versions[0m
-1.4.1
-[34m[1mRedis version[0m
-redis-server 2.8.19
-[34m[1mriak version[0m
-2.0.2
-[34m[1mMongoDB version[0m
-MongoDB 2.4.12
-[34m[1mCouchDB version[0m
-couchdb 1.6.1
-[34m[1mNeo4j version[0m
-1.9.4
-[34m[1mRabbitMQ Version[0m
-3.4.3
-[34m[1mElasticSearch version[0m
-1.4.0
-[34m[1mInstalled Sphinx versions[0m
-2.0.10
-2.1.9
-2.2.6
-[34m[1mDefault Sphinx version[0m
-2.2.6
-[34m[1mInstalled Firefox version[0m
-firefox 31.0esr
-[34m[1mPhantomJS version[0m
-1.9.8
-[34m[1mant -version[0m
-Apache Ant(TM) version 1.8.2 compiled on December 3 2011
-[34m[1mmvn -version[0m
-Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
-Maven home: /usr/local/maven
-Java version: 1.7.0_76, vendor: Oracle Corporation
-Java home: /usr/lib/jvm/java-7-oracle/jre
-Default locale: en_US, platform encoding: ANSI_X3.4-1968
-OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
-travis_fold:end:system_info[0K
-travis_fold:start:fix.CVE-2015-7547[0K$ export DEBIAN_FRONTEND=noninteractive
-W: Size of file /var/lib/apt/lists/us.archive.ubuntu.com_ubuntu_dists_precise-backports_multiverse_source_Sources.gz is not what the server reported 5886 5888
-W: Size of file /var/lib/apt/lists/ppa.launchpad.net_travis-ci_zero-mq_ubuntu_dists_precise_main_binary-amd64_Packages.gz is not what the server reported 832 1195
-W: Size of file /var/lib/apt/lists/ppa.launchpad.net_ubuntugis_ppa_ubuntu_dists_precise_main_binary-amd64_Packages.gz is not what the server reported 33653 36677
-W: Size of file /var/lib/apt/lists/ppa.launchpad.net_ubuntugis_ppa_ubuntu_dists_precise_main_binary-i386_Packages.gz is not what the server reported 33699 36733
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following extra packages will be installed:
-  libc-bin libc-dev-bin libc6-dev
-Suggested packages:
-  glibc-doc
-The following packages will be upgraded:
-  libc-bin libc-dev-bin libc6 libc6-dev
-4 upgraded, 0 newly installed, 0 to remove and 257 not upgraded.
-Need to get 8,840 kB of archives.
-After this operation, 14.3 kB disk space will be freed.
-Get:1 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc6-dev amd64 2.15-0ubuntu10.15 [2,943 kB]
-Get:2 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc-dev-bin amd64 2.15-0ubuntu10.15 [84.7 kB]
-Get:3 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc-bin amd64 2.15-0ubuntu10.15 [1,177 kB]
-Get:4 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libc6 amd64 2.15-0ubuntu10.15 [4,636 kB]
-Fetched 8,840 kB in 0s (21.7 MB/s)
-Preconfiguring packages ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 71420 files and directories currently installed.)
-Preparing to replace libc6-dev 2.15-0ubuntu10.10 (using .../libc6-dev_2.15-0ubuntu10.15_amd64.deb) ...
-Unpacking replacement libc6-dev ...
-Preparing to replace libc-dev-bin 2.15-0ubuntu10.10 (using .../libc-dev-bin_2.15-0ubuntu10.15_amd64.deb) ...
-Unpacking replacement libc-dev-bin ...
-Preparing to replace libc-bin 2.15-0ubuntu10.10 (using .../libc-bin_2.15-0ubuntu10.15_amd64.deb) ...
-Unpacking replacement libc-bin ...
-Processing triggers for man-db ...
-Setting up libc-bin (2.15-0ubuntu10.15) ...
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 71419 files and directories currently installed.)
-Preparing to replace libc6 2.15-0ubuntu10.10 (using .../libc6_2.15-0ubuntu10.15_amd64.deb) ...
-Unpacking replacement libc6 ...
-Setting up libc6 (2.15-0ubuntu10.15) ...
-Setting up libc-dev-bin (2.15-0ubuntu10.15) ...
-Setting up libc6-dev (2.15-0ubuntu10.15) ...
-Processing triggers for libc-bin ...
-ldconfig deferred processing now taking place
-travis_fold:end:fix.CVE-2015-7547[0Ktravis_fold:start:git.checkout[0Ktravis_time:start:0231bd89[0K$ git clone --depth=50 --branch=master https://github.com/coinbase/master_lock.git coinbase/master_lock
-Cloning into 'coinbase/master_lock'...
-remote: Counting objects: 58, done.[K
-remote: Compressing objects:   2% (1/39)   [Kremote: Compressing objects:   5% (2/39)   [Kremote: Compressing objects:   7% (3/39)   [Kremote: Compressing objects:  10% (4/39)   [Kremote: Compressing objects:  12% (5/39)   [Kremote: Compressing objects:  15% (6/39)   [Kremote: Compressing objects:  17% (7/39)   [Kremote: Compressing objects:  20% (8/39)   [Kremote: Compressing objects:  23% (9/39)   [Kremote: Compressing objects:  25% (10/39)   [Kremote: Compressing objects:  28% (11/39)   [Kremote: Compressing objects:  30% (12/39)   [Kremote: Compressing objects:  33% (13/39)   [Kremote: Compressing objects:  35% (14/39)   [Kremote: Compressing objects:  38% (15/39)   [Kremote: Compressing objects:  41% (16/39)   [Kremote: Compressing objects:  43% (17/39)   [Kremote: Compressing objects:  46% (18/39)   [Kremote: Compressing objects:  48% (19/39)   [Kremote: Compressing objects:  51% (20/39)   [Kremote: Compressing objects:  53% (21/39)   [Kremote: Compressing objects:  56% (22/39)   [Kremote: Compressing objects:  58% (23/39)   [Kremote: Compressing objects:  61% (24/39)   [Kremote: Compressing objects:  64% (25/39)   [Kremote: Compressing objects:  66% (26/39)   [Kremote: Compressing objects:  69% (27/39)   [Kremote: Compressing objects:  71% (28/39)   [Kremote: Compressing objects:  74% (29/39)   [Kremote: Compressing objects:  76% (30/39)   [Kremote: Compressing objects:  79% (31/39)   [Kremote: Compressing objects:  82% (32/39)   [Kremote: Compressing objects:  84% (33/39)   [Kremote: Compressing objects:  87% (34/39)   [Kremote: Compressing objects:  89% (35/39)   [Kremote: Compressing objects:  92% (36/39)   [Kremote: Compressing objects:  94% (37/39)   [Kremote: Compressing objects:  97% (38/39)   [Kremote: Compressing objects: 100% (39/39)   [Kremote: Compressing objects: 100% (39/39), done.[K
-remote: Total 58 (delta 13), reused 58 (delta 13), pack-reused 0[K
-Unpacking objects:   1% (1/58)   Unpacking objects:   3% (2/58)   Unpacking objects:   5% (3/58)   Unpacking objects:   6% (4/58)   Unpacking objects:   8% (5/58)   Unpacking objects:  10% (6/58)   Unpacking objects:  12% (7/58)   Unpacking objects:  13% (8/58)   Unpacking objects:  15% (9/58)   Unpacking objects:  17% (10/58)   Unpacking objects:  18% (11/58)   Unpacking objects:  20% (12/58)   Unpacking objects:  22% (13/58)   Unpacking objects:  24% (14/58)   Unpacking objects:  25% (15/58)   Unpacking objects:  27% (16/58)   Unpacking objects:  29% (17/58)   Unpacking objects:  31% (18/58)   Unpacking objects:  32% (19/58)   Unpacking objects:  34% (20/58)   Unpacking objects:  36% (21/58)   Unpacking objects:  37% (22/58)   Unpacking objects:  39% (23/58)   Unpacking objects:  41% (24/58)   Unpacking objects:  43% (25/58)   Unpacking objects:  44% (26/58)   Unpacking objects:  46% (27/58)   Unpacking objects:  48% (28/58)   Unpacking objects:  50% (29/58)   Unpacking objects:  51% (30/58)   Unpacking objects:  53% (31/58)   Unpacking objects:  55% (32/58)   Unpacking objects:  56% (33/58)   Unpacking objects:  58% (34/58)   Unpacking objects:  60% (35/58)   Unpacking objects:  62% (36/58)   Unpacking objects:  63% (37/58)   Unpacking objects:  65% (38/58)   Unpacking objects:  67% (39/58)   Unpacking objects:  68% (40/58)   Unpacking objects:  70% (41/58)   Unpacking objects:  72% (42/58)   Unpacking objects:  74% (43/58)   Unpacking objects:  75% (44/58)   Unpacking objects:  77% (45/58)   Unpacking objects:  79% (46/58)   Unpacking objects:  81% (47/58)   Unpacking objects:  82% (48/58)   Unpacking objects:  84% (49/58)   Unpacking objects:  86% (50/58)   Unpacking objects:  87% (51/58)   Unpacking objects:  89% (52/58)   Unpacking objects:  91% (53/58)   Unpacking objects:  93% (54/58)   Unpacking objects:  94% (55/58)   Unpacking objects:  96% (56/58)   Unpacking objects:  98% (57/58)   Unpacking objects: 100% (58/58)   Unpacking objects: 100% (58/58), done.
-Checking connectivity... done.
-
-travis_time:end:0231bd89:start=1475539576175068144,finish=1475539576520620837,duration=345552693[0K$ cd coinbase/master_lock
-$ git checkout -qf d1eebf5a9d0da6adaee499b079c06d1b40fb6fae
-travis_fold:end:git.checkout[0Ktravis_fold:start:services[0Ktravis_time:start:24bea0a6[0K$ sudo service redis_server start
-redis_server: unrecognized service
-
-travis_time:end:24bea0a6:start=1475539576529639256,finish=1475539576538089067,duration=8449811[0Ktravis_fold:end:services[0K
-[33;1mThis job is running on container-based infrastructure, which does not allow use of 'sudo', setuid and setguid executables.[0m
-[33;1mIf you require sudo, add 'sudo: required' to your .travis.yml[0m
-[33;1mSee https://docs.travis-ci.com/user/workers/container-based-infrastructure/ for details.[0m
-travis_fold:start:rvm[0Ktravis_time:start:07885928[0K$ rvm use 2.3.1 --install --binary --fuzzy
-[33mruby-2.3.1 is not installed - installing.[0m
-[32mSearching for binary rubies, this might take some time.[0m
-[32mFound remote file https://s3.amazonaws.com/travis-rubies/binaries/ubuntu/12.04/x86_64/ruby-2.3.1.tar.bz2[0m
-[32mChecking requirements for ubuntu.[0m
-[32mRequirements installation successful.[0m
-[32mruby-2.3.1 - #configure[0m
-[32mruby-2.3.1 - #download[0m
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 23.0M  100 23.0M    0     0  92.1M      0 --:--:-- --:--:-- --:--:-- 93.1M
-[33mNo checksum for downloaded archive, recording checksum in user configuration.[0m
-[32mruby-2.3.1 - #validate archive[0m
-[32mruby-2.3.1 - #extract[0m
-[32mruby-2.3.1 - #validate binary[0m
-[32mruby-2.3.1 - #setup[0m
-[32mruby-2.3.1 - #gemset created /home/travis/.rvm/gems/ruby-2.3.1@global[0m
-[32mruby-2.3.1 - #importing gemset /home/travis/.rvm/gemsets/global.gems[0m|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-.
-[32mruby-2.3.1 - #generating global wrappers[0m|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/.
-[32mruby-2.3.1 - #uninstalling gem rubygems-bundler-1.4.4[0m|/.
-[32mruby-2.3.1 - #gemset created /home/travis/.rvm/gems/ruby-2.3.1[0m
-[32mruby-2.3.1 - #importing gemset /home/travis/.rvm/gemsets/default.gems[0m|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.
-[32mruby-2.3.1 - #generating default wrappers[0m|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-\|/-.|/-\|/-\|.-\|/-.
-chown: changing ownership of `/home/travis/.rvm/user/installs': Operation not permitted
-[32mUsing /home/travis/.rvm/gems/ruby-2.3.1[0m
-
-travis_time:end:07885928:start=1475539582301444098,finish=1475539604823573702,duration=22522129604[0Ktravis_fold:end:rvm[0K$ export BUNDLE_GEMFILE=$PWD/Gemfile
-$ ruby --version
-ruby 2.3.1p112 (2016-04-26 revision 54768) [x86_64-linux]
-$ rvm --version
-rvm 1.26.10 (latest-minor) by Wayne E. Seguin <wayneeseguin@gmail.com>, Michal Papis <mpapis@gmail.com> [https://rvm.io/]
-$ bundle --version
-Bundler version 1.13.2
-$ gem --version
-2.5.1
-travis_fold:start:before_install[0Ktravis_time:start:1227da1c[0K$ gem install bundler -v 1.13.1
-Fetching: bundler-1.13.1.gemFetching: bundler-1.13.1.gem (  1%)Fetching: bundler-1.13.1.gem (  2%)Fetching: bundler-1.13.1.gem (  3%)Fetching: bundler-1.13.1.gem (  4%)Fetching: bundler-1.13.1.gem (  5%)Fetching: bundler-1.13.1.gem (  6%)Fetching: bundler-1.13.1.gem (  7%)Fetching: bundler-1.13.1.gem (  8%)Fetching: bundler-1.13.1.gem (  9%)Fetching: bundler-1.13.1.gem ( 10%)Fetching: bundler-1.13.1.gem ( 11%)Fetching: bundler-1.13.1.gem ( 16%)Fetching: bundler-1.13.1.gem ( 22%)Fetching: bundler-1.13.1.gem ( 27%)Fetching: bundler-1.13.1.gem ( 32%)Fetching: bundler-1.13.1.gem ( 38%)Fetching: bundler-1.13.1.gem ( 43%)Fetching: bundler-1.13.1.gem ( 48%)Fetching: bundler-1.13.1.gem ( 54%)Fetching: bundler-1.13.1.gem ( 59%)Fetching: bundler-1.13.1.gem ( 65%)Fetching: bundler-1.13.1.gem ( 70%)Fetching: bundler-1.13.1.gem ( 75%)Fetching: bundler-1.13.1.gem ( 81%)Fetching: bundler-1.13.1.gem ( 86%)Fetching: bundler-1.13.1.gem ( 91%)Fetching: bundler-1.13.1.gem ( 97%)Fetching: bundler-1.13.1.gem (100%)Fetching: bundler-1.13.1.gem (100%)
-Successfully installed bundler-1.13.1
-1 gem installed
-
-travis_time:end:1227da1c:start=1475539605277421698,finish=1475539606389557866,duration=1112136168[0Ktravis_fold:end:before_install[0Ktravis_fold:start:install.bundler[0Ktravis_time:start:181bbb09[0K$ bundle install --jobs=3 --retry=3
-Fetching gem metadata from https://rubygems.org/..........
-Fetching version metadata from https://rubygems.org/.
-Resolving dependencies...
-Using bundler 1.13.2
-[32mInstalling rake 10.5.0[0m
-[32mInstalling diff-lcs 1.2.5[0m
-[32mInstalling rspec-support 3.5.0[0m
-[32mInstalling redis 3.3.1[0m
-[32mInstalling rspec-core 3.5.4[0m
-[32mInstalling rspec-expectations 3.5.0[0m
-Using master_lock 0.1.0 from source at `.`
-[32mInstalling rspec-mocks 3.5.0[0m
-[32mInstalling rspec 3.5.0[0m
-[32mBundle complete! 4 Gemfile dependencies, 10 gems now installed.[0m
-[32mUse `bundle show [gemname]` to see where a bundled gem is installed.[0m
-
-travis_time:end:181bbb09:start=1475539606393865620,finish=1475539610730952165,duration=4337086545[0Ktravis_fold:end:install.bundler[0Ktravis_time:start:172c0800[0K$ bundle exec rake
-/home/travis/.rvm/rubies/ruby-2.3.1/bin/ruby -I/home/travis/.rvm/gems/ruby-2.3.1/gems/rspec-core-3.5.4/lib:/home/travis/.rvm/gems/ruby-2.3.1/gems/rspec-support-3.5.0/lib /home/travis/.rvm/gems/ruby-2.3.1/gems/rspec-core-3.5.4/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb
-
-Randomized with seed 49434
-
-MasterLock::Registry
-  #register
-[32m    tracks the registered lock[0m
-[32m    returns the registered struct[0m
-  #extend_locks
-[32m    removes the locks from the registered list after it has been released[0m
-[32m    does not attempt to extend recently acquired locks[0m
-[32m    extends locks that have been held longer than the extend_interval[0m
-[32m    does not remove active locks[0m
-[32m    removes the locks from the registered list after it has expired[0m
-  #unregister
-[32m    marks the lock as released[0m
-
-MasterLock::RedisLock
-  #release
-[31m    returns false when lock is held by another owner (FAILED - 1)[0m
-[31m    changes the lock to be unowned (FAILED - 2)[0m
-[31m    returns true when lock is held by owner (FAILED - 3)[0m
-[31m    returns false when lock is not held (FAILED - 4)[0m
-  #acquire
-[31m    returns false when lock can not be acquired (FAILED - 5)[0m
-[31m    attempts to acquire the lock repeatedly until timeout (FAILED - 6)[0m
-[31m    returns false if the same owner already has the lock (FAILED - 7)[0m
-[31m    returns true when lock can be acquired (FAILED - 8)[0m
-  #extend
-[31m    returns true when lock is held by owner (FAILED - 9)[0m
-[31m    resets the expiration time (FAILED - 10)[0m
-[31m    returns false when lock is not held (FAILED - 11)[0m
-[31m    returns false when lock is held by another owner (FAILED - 12)[0m
-
-MasterLock
-[31m  extends held locks automatically (FAILED - 13)[0m
-[31m  does not allow a lock to be acquired multiple times (FAILED - 14)[0m
-[31m  allows a lock to be acquired after it was released (FAILED - 15)[0m
-  .synchronize
-[31m    raises an ArgumentError when ttl is less than extend_interval (FAILED - 16)[0m
-[31m    returns the result of the block (FAILED - 17)[0m
-[31m    raises an ArgumentError when ttl is less than extend_interval (FAILED - 18)[0m
-    when the :if option is false
-[31m      does not obtain the lock (FAILED - 19)[0m
-[31m      returns the result of the block (FAILED - 20)[0m
-
-Failures:
-
-  1) MasterLock::RedisLock#release returns false when lock is held by another owner
-     [31mFailure/Error: redis.flushdb[0m
-     [31m[0m
-     [31mRedis::CannotConnectError:[0m
-     [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-     [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-     [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-     [36m# ------------------[0m
-     [36m# --- Caused by: ---[0m
-     [36m# IO::EINPROGRESSWaitWritable:[0m
-     [36m#   Operation now in progress - connect(2) would block[0m
-     [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  2) MasterLock::RedisLock#release changes the lock to be unowned
-     [31mFailure/Error: redis.flushdb[0m
-     [31m[0m
-     [31mRedis::CannotConnectError:[0m
-     [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-     [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-     [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-     [36m# ------------------[0m
-     [36m# --- Caused by: ---[0m
-     [36m# IO::EINPROGRESSWaitWritable:[0m
-     [36m#   Operation now in progress - connect(2) would block[0m
-     [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  3) MasterLock::RedisLock#release returns true when lock is held by owner
-     [31mFailure/Error: redis.flushdb[0m
-     [31m[0m
-     [31mRedis::CannotConnectError:[0m
-     [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-     [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-     [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-     [36m# ------------------[0m
-     [36m# --- Caused by: ---[0m
-     [36m# IO::EINPROGRESSWaitWritable:[0m
-     [36m#   Operation now in progress - connect(2) would block[0m
-     [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  4) MasterLock::RedisLock#release returns false when lock is not held
-     [31mFailure/Error: redis.flushdb[0m
-     [31m[0m
-     [31mRedis::CannotConnectError:[0m
-     [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-     [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-     [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-     [36m# ------------------[0m
-     [36m# --- Caused by: ---[0m
-     [36m# IO::EINPROGRESSWaitWritable:[0m
-     [36m#   Operation now in progress - connect(2) would block[0m
-     [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  5) MasterLock::RedisLock#acquire returns false when lock can not be acquired
-     [31mFailure/Error: redis.flushdb[0m
-     [31m[0m
-     [31mRedis::CannotConnectError:[0m
-     [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-     [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-     [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-     [36m# ------------------[0m
-     [36m# --- Caused by: ---[0m
-     [36m# IO::EINPROGRESSWaitWritable:[0m
-     [36m#   Operation now in progress - connect(2) would block[0m
-     [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  6) MasterLock::RedisLock#acquire attempts to acquire the lock repeatedly until timeout
-     [31mFailure/Error: redis.flushdb[0m
-     [31m[0m
-     [31mRedis::CannotConnectError:[0m
-     [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-     [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-     [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-     [36m# ------------------[0m
-     [36m# --- Caused by: ---[0m
-     [36m# IO::EINPROGRESSWaitWritable:[0m
-     [36m#   Operation now in progress - connect(2) would block[0m
-     [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  7) MasterLock::RedisLock#acquire returns false if the same owner already has the lock
-     [31mFailure/Error: redis.flushdb[0m
-     [31m[0m
-     [31mRedis::CannotConnectError:[0m
-     [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-     [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-     [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-     [36m# ------------------[0m
-     [36m# --- Caused by: ---[0m
-     [36m# IO::EINPROGRESSWaitWritable:[0m
-     [36m#   Operation now in progress - connect(2) would block[0m
-     [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  8) MasterLock::RedisLock#acquire returns true when lock can be acquired
-     [31mFailure/Error: redis.flushdb[0m
-     [31m[0m
-     [31mRedis::CannotConnectError:[0m
-     [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-     [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-     [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-     [36m# ------------------[0m
-     [36m# --- Caused by: ---[0m
-     [36m# IO::EINPROGRESSWaitWritable:[0m
-     [36m#   Operation now in progress - connect(2) would block[0m
-     [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  9) MasterLock::RedisLock#extend returns true when lock is held by owner
-     [31mFailure/Error: redis.flushdb[0m
-     [31m[0m
-     [31mRedis::CannotConnectError:[0m
-     [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-     [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-     [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-     [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-     [36m# ------------------[0m
-     [36m# --- Caused by: ---[0m
-     [36m# IO::EINPROGRESSWaitWritable:[0m
-     [36m#   Operation now in progress - connect(2) would block[0m
-     [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  10) MasterLock::RedisLock#extend resets the expiration time
-      [31mFailure/Error: redis.flushdb[0m
-      [31m[0m
-      [31mRedis::CannotConnectError:[0m
-      [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-      [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-      [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-      [36m# ------------------[0m
-      [36m# --- Caused by: ---[0m
-      [36m# IO::EINPROGRESSWaitWritable:[0m
-      [36m#   Operation now in progress - connect(2) would block[0m
-      [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  11) MasterLock::RedisLock#extend returns false when lock is not held
-      [31mFailure/Error: redis.flushdb[0m
-      [31m[0m
-      [31mRedis::CannotConnectError:[0m
-      [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-      [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-      [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-      [36m# ------------------[0m
-      [36m# --- Caused by: ---[0m
-      [36m# IO::EINPROGRESSWaitWritable:[0m
-      [36m#   Operation now in progress - connect(2) would block[0m
-      [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  12) MasterLock::RedisLock#extend returns false when lock is held by another owner
-      [31mFailure/Error: redis.flushdb[0m
-      [31m[0m
-      [31mRedis::CannotConnectError:[0m
-      [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-      [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-      [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-      [36m# ------------------[0m
-      [36m# --- Caused by: ---[0m
-      [36m# IO::EINPROGRESSWaitWritable:[0m
-      [36m#   Operation now in progress - connect(2) would block[0m
-      [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  13) MasterLock extends held locks automatically
-      [31mFailure/Error: redis.flushdb[0m
-      [31m[0m
-      [31mRedis::CannotConnectError:[0m
-      [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-      [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-      [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-      [36m# ------------------[0m
-      [36m# --- Caused by: ---[0m
-      [36m# IO::EINPROGRESSWaitWritable:[0m
-      [36m#   Operation now in progress - connect(2) would block[0m
-      [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  14) MasterLock does not allow a lock to be acquired multiple times
-      [31mFailure/Error: redis.flushdb[0m
-      [31m[0m
-      [31mRedis::CannotConnectError:[0m
-      [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-      [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-      [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-      [36m# ------------------[0m
-      [36m# --- Caused by: ---[0m
-      [36m# IO::EINPROGRESSWaitWritable:[0m
-      [36m#   Operation now in progress - connect(2) would block[0m
-      [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  15) MasterLock allows a lock to be acquired after it was released
-      [31mFailure/Error: redis.flushdb[0m
-      [31m[0m
-      [31mRedis::CannotConnectError:[0m
-      [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-      [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-      [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-      [36m# ------------------[0m
-      [36m# --- Caused by: ---[0m
-      [36m# IO::EINPROGRESSWaitWritable:[0m
-      [36m#   Operation now in progress - connect(2) would block[0m
-      [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  16) MasterLock.synchronize raises an ArgumentError when ttl is less than extend_interval
-      [31mFailure/Error: redis.flushdb[0m
-      [31m[0m
-      [31mRedis::CannotConnectError:[0m
-      [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-      [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-      [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-      [36m# ------------------[0m
-      [36m# --- Caused by: ---[0m
-      [36m# IO::EINPROGRESSWaitWritable:[0m
-      [36m#   Operation now in progress - connect(2) would block[0m
-      [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  17) MasterLock.synchronize returns the result of the block
-      [31mFailure/Error: redis.flushdb[0m
-      [31m[0m
-      [31mRedis::CannotConnectError:[0m
-      [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-      [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-      [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-      [36m# ------------------[0m
-      [36m# --- Caused by: ---[0m
-      [36m# IO::EINPROGRESSWaitWritable:[0m
-      [36m#   Operation now in progress - connect(2) would block[0m
-      [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  18) MasterLock.synchronize raises an ArgumentError when ttl is less than extend_interval
-      [31mFailure/Error: redis.flushdb[0m
-      [31m[0m
-      [31mRedis::CannotConnectError:[0m
-      [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-      [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-      [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-      [36m# ------------------[0m
-      [36m# --- Caused by: ---[0m
-      [36m# IO::EINPROGRESSWaitWritable:[0m
-      [36m#   Operation now in progress - connect(2) would block[0m
-      [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  19) MasterLock.synchronize when the :if option is false does not obtain the lock
-      [31mFailure/Error: redis.flushdb[0m
-      [31m[0m
-      [31mRedis::CannotConnectError:[0m
-      [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-      [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-      [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-      [36m# ------------------[0m
-      [36m# --- Caused by: ---[0m
-      [36m# IO::EINPROGRESSWaitWritable:[0m
-      [36m#   Operation now in progress - connect(2) would block[0m
-      [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-  20) MasterLock.synchronize when the :if option is false returns the result of the block
-      [31mFailure/Error: redis.flushdb[0m
-      [31m[0m
-      [31mRedis::CannotConnectError:[0m
-      [31m  Error connecting to Redis on 127.0.0.1:6379 (Errno::ECONNREFUSED)[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:345:in `rescue in establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:331:in `establish_connection'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:101:in `block in connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:293:in `with_reconnect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:100:in `connect'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:364:in `ensure_connected'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:221:in `block in process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:306:in `logging'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:220:in `process'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/client.rb:120:in `call'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:241:in `block in flushdb'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `block in synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:58:in `synchronize'[0m
-      [36m# /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis.rb:240:in `flushdb'[0m
-      [36m# ./spec/support/redis_test.rb:11:in `clean_redis'[0m
-      [36m# ./spec/spec_helper.rb:65:in `block (2 levels) in <top (required)>'[0m
-      [36m# ------------------[0m
-      [36m# --- Caused by: ---[0m
-      [36m# IO::EINPROGRESSWaitWritable:[0m
-      [36m#   Operation now in progress - connect(2) would block[0m
-      [36m#   /home/travis/.rvm/gems/ruby-2.3.1/gems/redis-3.3.1/lib/redis/connection/ruby.rb:182:in `connect_addrinfo'[0m
-
-Finished in 0.03009 seconds (files took 0.10404 seconds to load)
-[31m28 examples, 20 failures[0m
-
-Failed examples:
-
-[31mrspec ./spec/master_lock/redis_lock_spec.rb:64[0m [36m# MasterLock::RedisLock#release returns false when lock is held by another owner[0m
-[31mrspec ./spec/master_lock/redis_lock_spec.rb:73[0m [36m# MasterLock::RedisLock#release changes the lock to be unowned[0m
-[31mrspec ./spec/master_lock/redis_lock_spec.rb:59[0m [36m# MasterLock::RedisLock#release returns true when lock is held by owner[0m
-[31mrspec ./spec/master_lock/redis_lock_spec.rb:69[0m [36m# MasterLock::RedisLock#release returns false when lock is not held[0m
-[31mrspec ./spec/master_lock/redis_lock_spec.rb:16[0m [36m# MasterLock::RedisLock#acquire returns false when lock can not be acquired[0m
-[31mrspec ./spec/master_lock/redis_lock_spec.rb:26[0m [36m# MasterLock::RedisLock#acquire attempts to acquire the lock repeatedly until timeout[0m
-[31mrspec ./spec/master_lock/redis_lock_spec.rb:21[0m [36m# MasterLock::RedisLock#acquire returns false if the same owner already has the lock[0m
-[31mrspec ./spec/master_lock/redis_lock_spec.rb:12[0m [36m# MasterLock::RedisLock#acquire returns true when lock can be acquired[0m
-[31mrspec ./spec/master_lock/redis_lock_spec.rb:33[0m [36m# MasterLock::RedisLock#extend returns true when lock is held by owner[0m
-[31mrspec ./spec/master_lock/redis_lock_spec.rb:47[0m [36m# MasterLock::RedisLock#extend resets the expiration time[0m
-[31mrspec ./spec/master_lock/redis_lock_spec.rb:43[0m [36m# MasterLock::RedisLock#extend returns false when lock is not held[0m
-[31mrspec ./spec/master_lock/redis_lock_spec.rb:38[0m [36m# MasterLock::RedisLock#extend returns false when lock is held by another owner[0m
-[31mrspec ./spec/master_lock_spec.rb:25[0m [36m# MasterLock extends held locks automatically[0m
-[31mrspec ./spec/master_lock_spec.rb:12[0m [36m# MasterLock does not allow a lock to be acquired multiple times[0m
-[31mrspec ./spec/master_lock_spec.rb:19[0m [36m# MasterLock allows a lock to be acquired after it was released[0m
-[31mrspec ./spec/master_lock_spec.rb:39[0m [36m# MasterLock.synchronize raises an ArgumentError when ttl is less than extend_interval[0m
-[31mrspec ./spec/master_lock_spec.rb:34[0m [36m# MasterLock.synchronize returns the result of the block[0m
-[31mrspec ./spec/master_lock_spec.rb:44[0m [36m# MasterLock.synchronize raises an ArgumentError when ttl is less than extend_interval[0m
-[31mrspec ./spec/master_lock_spec.rb:50[0m [36m# MasterLock.synchronize when the :if option is false does not obtain the lock[0m
-[31mrspec ./spec/master_lock_spec.rb:57[0m [36m# MasterLock.synchronize when the :if option is false returns the result of the block[0m
-
-Randomized with seed 49434
-
-/home/travis/.rvm/rubies/ruby-2.3.1/bin/ruby -I/home/travis/.rvm/gems/ruby-2.3.1/gems/rspec-core-3.5.4/lib:/home/travis/.rvm/gems/ruby-2.3.1/gems/rspec-support-3.5.0/lib /home/travis/.rvm/gems/ruby-2.3.1/gems/rspec-core-3.5.4/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb failed
-
-travis_time:end:172c0800:start=1475539610734990357,finish=1475539611780988320,duration=1045997963[0K
-[31;1mThe command "bundle exec rake" exited with 1.[0m
-
-Done. Your build exited with 1.
